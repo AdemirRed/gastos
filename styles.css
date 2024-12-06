@@ -1,0 +1,212 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f4f4f4;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #ddd;
+}
+
+h1, h2 {
+    color: #333;
+    transition: color 0.3s;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+/* Layout de duas colunas para o formulário de transações */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+.form-item {
+    flex: 1;
+    min-width: calc(50% - 10px); /* Ajusta a largura das colunas */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input {
+    width: 96.5%;
+}
+
+/* Tema claro */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container.light-theme {
+    background-color: white;
+    color: #333;
+}
+
+button.light-theme {
+    background-color: #28a745;
+    color: white;
+}
+
+button.light-theme:hover {
+    background-color: #218838;
+}
+
+/* Tema escuro */
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+.container.dark-theme {
+    background-color: #444;
+    color: white;
+}
+
+h1.dark-theme, h2.dark-theme {
+    color: white;
+}
+
+input.dark-theme, select.dark-theme, button.dark-theme {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+}
+
+input.dark-theme:focus, select.dark-theme:focus, button.dark-theme:focus {
+    background-color: #666;
+    border-color: #888;
+}
+
+button.dark-theme {
+    background-color: #555;
+    color: white;
+}
+
+button.dark-theme:hover {
+    background-color: #666;
+}
+
+/* Estilos para o container de transações */
+#transacoes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaço entre as transações */
+   justify-content: space-between;
+}
+
+/* Estilo para cada transação */
+.transacao {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: calc(45% - 10px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px; /* Espaço entre as transações */
+}
+
+/* Estilo para cada transação - Android / Dispositivos móveis */
+@media (max-width: 768px) {
+    .transacao {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        width: calc(40% - 10px);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px; /* Espaço entre as transações */
+    }
+}
+
+
+/* Estilos para o texto das transações */
+.transacao span {
+    font-size: 16px;
+}
+
+/* Estilo para o botão de remover */
+button.remover {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.remover:hover {
+    background-color: #c0392b;
+}
+
+/* Tema escuro para transações */
+body.dark-theme .transacao {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-theme .transacao button.remover {
+    background-color: #c0392b;
+}
+
+body.dark-theme .transacao button.remover:hover {
+    background-color: #e74c3c;
+}
+
+
+#graficoPizza {
+    width: 300px; /* Largura do gráfico */
+    height: 300px; /* Altura do gráfico */
+}
