@@ -3,56 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Gastos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Verifique se o caminho está correto -->
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Gerenciador de Gastos</h1>
+        <h1>Controle Financeiro</h1>
+        <div class="formulario">
+            <form id="salario-form">
+                <label for="salario">Salário:</label>
+                <input type="number" id="salario" placeholder="Digite seu salário" required>
+                <button type="submit">Salvar</button>
+            </form>
 
-        <form id="salario-form">
-            <label for="salario">Insira seu salário:</label>
-            <input type="number" id="salario" placeholder="Insira seu salário" required>
-            <button type="submit">Adicionar Salário</button>
-        </form>
-
-        <p>Salário para Cálculo: R$ <span id="salario-para-calculo">0</span></p> <!-- Elemento adicionado -->
-
-        <form id="transacao-form">
-            <label for="valor">Valor:</label>
-            <input type="number" id="valor" placeholder="Valor" required>
-            
-            <label for="tipo">Tipo:</label>
-            <select id="tipo" required>
-                <option value="Despesa">Despesa</option>
-                <option value="Receita">Receita</option>
-            </select>
-            
-            <label for="categoria">Categoria:</label>
-            <select id="categoria" required>
-                <option value="Transporte">Transporte</option>
-                <option value="Lazer">Lazer</option>
-                <option value="Moradia">Moradia</option>
-                <option value="Outros">Outros</option>
-            </select>
-            <input type="text" id="nova-categoria" placeholder="Ou insira uma nova categoria" />
-            
-            <button type="submit">Adicionar Transação</button>
-        </form>
-
-        <h2>Transações</h2>
-        <div id="transacoes-lista"></div>
-
-        <h2>Gráfico de Despesas</h2>
-        <canvas id="graficoPizza" width="400" height="400"></canvas>
-
-        <h2>Visão Geral</h2>
-        <p>Total Receita: R$ <span id="total-receita">0</span></p>
-        <p>Total Despesa: R$ <span id="total-despesa">0</span></p>
-        <p>Saldo: R$ <span id="saldo">0</span></p>
+            <form id="transacao-form">
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" placeholder="Digite o valor" required>
+                <label for="tipo">Tipo:</label>
+                <select id="tipo">
+                    <option value="Receita">Receita</option>
+                    <option value="Despesa">Despesa</option>
+                </select>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria"></select>
+                <input type="text" id="nova-categoria" placeholder="Nova categoria (opcional)">
+                <button type="submit">Adicionar Transação</button>
+            </form>
+        </div>
+        <canvas id="graficoPizza"></canvas>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
