@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Controle Financeiro</h1>
         <div class="formulario">
+            <!-- Formulário para o salário -->
             <form id="salario-form">
                 <label for="salario">Salário:</label>
                 <input type="number" id="salario" placeholder="Digite seu salário" required>
                 <button type="submit">Salvar</button>
             </form>
 
+            <!-- Formulário para transações -->
             <form id="transacao-form">
                 <label for="valor">Valor:</label>
                 <input type="number" id="valor" placeholder="Digite o valor" required>
+                
                 <label for="tipo">Tipo:</label>
                 <select id="tipo">
                     <option value="Receita">Receita</option>
                     <option value="Despesa">Despesa</option>
                 </select>
+
                 <label for="categoria">Categoria:</label>
                 <select id="categoria"></select>
+                
                 <input type="text" id="nova-categoria" placeholder="Nova categoria (opcional)">
                 <button type="submit">Adicionar Transação</button>
             </form>
         </div>
         <canvas id="graficoPizza"></canvas>
     </div>
-    <script src="script.js"></script> <!-- Link para o JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
