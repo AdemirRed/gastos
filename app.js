@@ -169,7 +169,7 @@ function renderizarTransacoes() {
         divTransacao.innerHTML = `
             <strong>${transacao.tipo}</strong>: R$ ${transacao.valor.toFixed(2)} 
             <em>(${transacao.categoria})</em>
-            <button onclick="removerTransacao(${index})">Remover</button> <!-- Botão Remover -->
+            <button class = 'BotaoRemover' onclick="removerTransacao(${index})">Remover</button> <!-- Botão Remover -->
         `;
         transacoesLista.appendChild(divTransacao);
     });
@@ -200,37 +200,6 @@ function removerTransacao(index) {
     atualizarGraficoPizza(); // Atualiza o gráfico de pizza após remover uma transação
 }
 
-// Função para atualizar a visão geral
-function atualizarVisaoGeral() {
-    const totalReceitaElement = document.getElementById('total-receita');
-    const totalDespesaElement = document.getElementById('total-despesa');
-    const saldoElement = document.getElementById('saldo');
-    const salarioParaCalculoElement = document.getElementById('salario-para-calculo');
-
-    if (!totalReceitaElement || !totalDespesaElement || !saldoElement) {
-        console.error('Elementos para exibição de valores não encontrados!');
-        return;
-    }
-
-    let totalReceita = 0;
-    let totalDespesa = 0;
-    transacoes.forEach(transacao => {
-        if (transacao.tipo === 'Receita') {
-            totalReceita += transacao.valor;
-        } else if (transacao.tipo === 'Despesa') {
-            totalDespesa += transacao.valor;
-        }
-    });
-
-    const saldo = totalReceita - totalDespesa;
-    totalReceitaElement.textContent = `R$ ${totalReceita.toFixed(2)}`;
-    totalDespesaElement.textContent = `R$ ${totalDespesa.toFixed(2)}`;
-    saldoElement.textContent = `R$ ${saldo.toFixed(2)}`;
-
-    if (!isNaN(salario)) {
-        salarioParaCalculoElement.textContent = `R$ ${salario.toFixed(2)}`;
-    }
-}
 
 // Função para carregar transações e salário do localStorage
 function carregarTransacoes() {

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<link rel="icon" href="https://raw.githubusercontent.com/AdemirRed/icone/refs/heads/main/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoie o Gerenciador de Gastos</title>
+    <style>
+        /* Tema escuro */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        #footer {
+            margin-top: 40px;
+        }
+
+        #footer img {
+            width: 200px; /* Aumentando o QR Code */
+            height: 200px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .btn-voltar {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #45a049;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content p {
+            margin-bottom: 30px;
+        }
+		
+		/* Animação de Fade-in e Bounce */
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animacao-texto {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+    animation: fadeInBounce 2s ease-out;
+    animation-delay: 0.5s; /* Atraso antes de começar a animação */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Apoie o Desenvolvedor</h1>
+            <p>Este projeto foi criado para ajudar você a controlar suas finanças pessoais de forma prática e eficiente. Ele é desenvolvido por uma única pessoa e, para continuar oferecendo melhorias, precisamos da sua ajuda!</p>
+            <p>Se você acredita no projeto e quer ver mais funcionalidades, considere fazer uma doação via Pix. Seu apoio é fundamental para mantermos o desenvolvimento contínuo!</p>
+
+            <div id="footer">
+                <a href="https://nubank.com.br/cobrar/fccbu/6753934d-236a-4214-acdd-91f28e2c391f" target="_blank">
+                    <img src="https://raw.githubusercontent.com/AdemirRed/icone/refs/heads/main/CafeDevPix.jpeg" alt="QRCode Pix">
+                </a>
+              <p class="animacao-texto">→ Pegue um CAFÉ para o Dev. ←</p>
+
+
+            </div>
+
+            <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+        </div>
+    </div>
+</body>
+</html>

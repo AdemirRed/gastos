@@ -15,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Botão de alternância de tema */
@@ -37,25 +37,43 @@ body {
     background-color: #ddd;
 }
 
-h1, h2 {
-    color: #333;
-    transition: color 0.3s;
+/* Novo botão de apoio */
+#support-toggle {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    /* Ajuste para a posição do botão */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f4f4f4;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-form {
-    margin-bottom: 20px;
+#support-toggle:hover {
+    background-color: #ddd;
+}
+
+/* Títulos */
+h1,
+h2 {
+    color: #333;
+    transition: color 0.3s;
 }
 
 /* Layout de duas colunas para o formulário de transações */
 .form-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaço entre as colunas */
+    gap: 20px;
 }
 
 .form-item {
     flex: 1;
-    min-width: calc(50% - 10px); /* Ajusta a largura das colunas */
+    min-width: calc(50% - 10px);
 }
 
 label {
@@ -63,7 +81,9 @@ label {
     margin: 10px 0 5px;
 }
 
-input, select, button {
+input,
+select,
+button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -107,17 +127,22 @@ body.dark-theme {
     color: white;
 }
 
-h1.dark-theme, h2.dark-theme {
+h1.dark-theme,
+h2.dark-theme {
     color: white;
 }
 
-input.dark-theme, select.dark-theme, button.dark-theme {
+input.dark-theme,
+select.dark-theme,
+button.dark-theme {
     background-color: #555;
     color: white;
     border: 1px solid #777;
 }
 
-input.dark-theme:focus, select.dark-theme:focus, button.dark-theme:focus {
+input.dark-theme:focus,
+select.dark-theme:focus,
+button.dark-theme:focus {
     background-color: #666;
     border-color: #888;
 }
@@ -135,8 +160,8 @@ button.dark-theme:hover {
 #transacoes-lista {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Espaço entre as transações */
-   justify-content: space-between;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 /* Estilo para cada transação */
@@ -151,26 +176,15 @@ button.dark-theme:hover {
     margin-bottom: 20px;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 10px; /* Espaço entre as transações */
+    gap: 10px;
 }
 
 /* Estilo para cada transação - Android / Dispositivos móveis */
 @media (max-width: 768px) {
     .transacao {
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         width: calc(40% - 10px);
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 10px; /* Espaço entre as transações */
     }
 }
-
 
 /* Estilos para o texto das transações */
 .transacao span {
@@ -205,8 +219,119 @@ body.dark-theme .transacao button.remover:hover {
     background-color: #e74c3c;
 }
 
-
 #graficoPizza {
-    width: 300px; /* Largura do gráfico */
-    height: 300px; /* Altura do gráfico */
+    width: 300px;
+    height: 300px;
+}
+
+/* Estilos específicos para o botão de tema e o de suporte no modo claro e escuro */
+body.light-theme #theme-toggle,
+body.light-theme #support-toggle {
+    background-color: #f4f4f4;
+    color: black;
+    gap: 5px;
+
+}
+
+body.dark-theme #theme-toggle,
+body.dark-theme #support-toggle {
+    background-color: #333;
+    color: white;
+    gap: 5px;
+}
+
+
+/* Estilo geral para botões */
+button {
+    display: flex;
+    align-items: center;
+    /* Alinha o texto verticalmente */
+    justify-content: center;
+    /* Alinha o texto horizontalmente */
+    padding: 20px 20px;
+    /* Ajuste o padding para garantir que o texto não fique muito apertado */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* Ajuste o tamanho da fonte, se necessário */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* Tema claro */
+button.light-theme {
+    background-color: #28a745;
+    color: white;
+}
+
+button.light-theme:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+/* Tema escuro */
+button.dark-theme {
+    background-color: #555;
+    color: white;
+}
+
+button.dark-theme:hover {
+    background-color: #666;
+}
+
+/* Botão de remover */
+button.remover {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Alinha o texto no centro */
+}
+
+button.remover:hover {
+    background-color: #c0392b;
+}
+
+/* Tema escuro para o botão de remover */
+body.dark-theme button.remover {
+    background-color: #555;
+}
+
+body.dark-theme button.remover:hover {
+    background-color: #e74c3c;
+}
+
+body.light-theme .BotaoRemover {
+    height: 20px;
+    width: 300px;
+    position: relative;
+    background-color: #fff;
+    color: #555;
+}
+
+body.dark-theme .BotaoRemover {
+    height: 20px;
+    width: 300px;
+    position: relative;
+
+    background-color: #555;
+    color: #ddd;
+}
+
+.BotaoRemover {
+    height: 20px;
+    width: 300px;
+    position: relative;
+    background-color: #fff;
+    color: #555;
 }

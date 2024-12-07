@@ -5,73 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Gastos</title>
     <link rel="stylesheet" href="styles.css"> <!-- Verifique se o caminho está correto -->
+	<link rel="icon" href="https://raw.githubusercontent.com/AdemirRed/icone/refs/heads/main/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-    <!-- Botão para alternar entre tema claro e escuro -->
-    <button id="theme-toggle" class="theme-toggle">
-        🌙
-    </button>
-
-   <h1 style="color: red;">Gerenciador de Gastos</h1>
-
-
-    <!-- Formulário para inserir o salário -->
-    <form id="salario-form">
-        <label for="salario">Insira seu salário:</label>
-        <input type="number" id="salario" placeholder="Insira seu salário" required>
-        <button type="submit">Adicionar Salário</button>
-    </form>
-
-    <p>Salário para Cálculo: R$ <span id="salario-para-calculo">0</span></p> <!-- Exibe o salário para cálculo -->
-
-    <!-- Formulário para adicionar transações -->
-    <form id="transacao-form">
-        <div class="form-row">
-            <div class="form-item">
-                <label for="valor">Valor:</label>
-                <input type="number" id="valor" placeholder="Valor" required>
-            </div>
-            <div class="form-item">
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" required>
-                    <option value="Despesa">Despesa</option>
-                    <option value="Receita">Receita</option>
-                </select>
-            </div>
+        <!-- Botões de alternância -->
+        <div class="buttons-container">
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <button id="support-toggle" class="support-toggle" onclick="location.href='pix_donation_page.html'">💪</button>
         </div>
 
-        <div class="form-row">
-            <div class="form-item">
-                <label for="categoria">Categoria:</label>
-                <select id="categoria" required>
-                    <option value="Transporte">Transporte</option>
-                    <option value="Lazer">Lazer</option>
-                    <option value="Moradia">Moradia</option>
-                    <option value="Outros">Outros</option>
-                </select>
+        <h1>Gerenciador de Gastos</h1>
+
+        <!-- Formulário para inserir o salário -->
+        <form id="salario-form">
+            <label for="salario">Insira seu salário:</label>
+            <input type="number" id="salario" placeholder="Insira seu salário" required>
+            <button type="submit">Adicionar Salário</button>
+        </form>
+
+        <p>Salário para Cálculo: R$ <span id="salario-para-calculo">0</span></p> <!-- Exibe o salário para cálculo -->
+
+        <!-- Formulário para adicionar transações -->
+        <form id="transacao-form">
+            <div class="form-row">
+                <div class="form-item">
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor" placeholder="Valor" required>
+                </div>
+                <div class="form-item">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" required>
+                        <option value="Despesa">Despesa</option>
+                        <option value="Receita">Receita</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-item">
-			<label for="categoria">Nova Categoria:</label>
-                <input type="text" id="nova-categoria" placeholder="Ou insira uma nova categoria" />
+
+            <div class="form-row">
+                <div class="form-item">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" required>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Moradia">Moradia</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="categoria">Nova Categoria:</label>
+                    <input type="text" id="nova-categoria" placeholder="Ou insira uma nova categoria" />
+                </div>
             </div>
-        </div>
 
-        <button type="submit">Adicionar Transação</button>
-    </form>
+            <button type="submit">Adicionar Transação</button>
+			
+        </form>
 
-    <h2>Transações</h2>
-    <div id="transacoes-lista"></div> <!-- Lista de transações será exibida aqui -->
+        <h2>Transações</h2>
+        <div id="transacoes-lista"></div> <!-- Lista de transações será exibida aqui -->
 
-    <h2>Gráfico de Despesas</h2>
-    <canvas id="graficoPizza"></canvas> <!-- Gráfico de pizza para mostrar as despesas -->
+        <h2>Gráfico de Despesas</h2>
+        <canvas id="graficoPizza"></canvas> <!-- Gráfico de pizza para mostrar as despesas -->
 
-    <h2>Visão Geral</h2>
-    <p>Total Receita: R$ <span id="total-receita">0</span></p>
-    <p>Total Despesa: R$ <span id="total-despesa">0</span></p>
-    <p>Saldo: R$ <span id="saldo">0</span></p> <!-- Exibe o saldo final -->
-</div>
-
+        <h2>Visão Geral</h2>
+        <p>Total Receita: R$ <span id="total-receita">0</span></p>
+        <p>Total Despesa: R$ <span id="total-despesa">0</span></p>
+        <p>Saldo: R$ <span id="saldo">0</span></p> <!-- Exibe o saldo final -->
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Carrega o Chart.js para gráficos -->
     <script src="app.js"></script> <!-- Carrega o arquivo JavaScript para lógica de funcionamento -->
